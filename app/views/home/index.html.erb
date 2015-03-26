@@ -1,0 +1,63 @@
+<div id="homeContainer">
+  <!-- <%= image_tag 'brushstroke.png', :id => "topBorder"%> -->
+  <img src="http://emmysspaghettishack.com/wp-content/uploads/2013/04/Spaghetti.jpg" class="rotating-item"/>
+  <img src="http://41.media.tumblr.com/tumblr_mbqmwtA69i1rulhlao1_500.jpg" class="rotating-item"/>
+  <img src="http://41.media.tumblr.com/1ec6953bc572056aca1e8c894b3442f9/tumblr_n9vuozxv8f1rulhlao1_500.jpg" class="rotating-item"/>
+  <img src="http://36.media.tumblr.com/aba0775c87dba17998ef44c7e6694560/tumblr_na3f8zPwAc1rulhlao1_500.png" class="rotating-item"/>
+  <!-- <%= image_tag 'brushstroke.png', :id => "bottomBorder" %> -->
+  <div id="location">
+    <div class="title">Nutritional Dinners in a Click</div>
+    <div id="bottomHalf">
+      <a href="#" class="state">State</a>
+      <a href="#" class="city">City</a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+$(window).load(function() { //start after HTML, images have loaded
+
+    var InfiniteRotator =
+    {
+        init: function()
+        {
+            //initial fade-in time (in milliseconds)
+            var initialFadeIn = 500;
+
+            //interval between items (in milliseconds)
+            var itemInterval = 3000;
+
+            //cross-fade time (in milliseconds)
+            var fadeTime = 2500;
+
+            //count number of items
+            var numberOfItems = $('.rotating-item').length;
+
+            //set current item
+            var currentItem = 0;
+
+            //show first item
+            $('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
+
+            //loop through the items
+            var infiniteLoop = setInterval(function(){
+                $('.rotating-item').eq(currentItem).fadeOut(fadeTime);
+
+                if(currentItem == numberOfItems -1){
+                    currentItem = 0;
+                }else{
+                    currentItem++;
+                }
+                $('.rotating-item').eq(currentItem).fadeIn(fadeTime);
+
+            }, itemInterval);
+        }
+    };
+
+    InfiniteRotator.init();
+
+});
+})
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Primapantry</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div id="logo">logo</div>
+        </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+
+          <ul class="nav navbar-nav navbar-left new here menu" id="menu">
+            <li id="home" class="link nonlogo" >
+              <%= link_to "HOME", root_path() %>
+            </li>
+            <li id="about" class="link nonlogo">
+              <%= link_to "ABOUT", about_path() %>
+            </li>
+            <li class="link" id="logo"><%= image_tag 'logo.png'%></li>
+              <li id="contact" class="link nonlogo">
+              <%= link_to "FOOD", food_path() %>
+              </li>
+            <li id="blog" class="link nonlogo">
+              <%= link_to "ORDER", order_path() %>
+            </li>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+<%= yield %>
+
+</body>
+</html>
